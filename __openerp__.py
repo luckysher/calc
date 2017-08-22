@@ -5,7 +5,7 @@
     'version': '1.0.1',
     'category': 'Calculations',
     'sequence': 6,
-    'summary': 'Touchscreen Interface for calculations',
+    'summary': 'Make calculations easy',
     'description': """Quick and Easy Calculations""",
     'author': 'Lucky',
     'depends': ['base'],
