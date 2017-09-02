@@ -10,13 +10,13 @@
     'author': 'Lucky',
     'depends': ['base'],
     'data': [
-        'views/templates.xml',
-        'views/ca_lc.xml',
+        'main.xml',
+        'views/calc.xml'
     ],
     'installable': True,
     'application': True,
     'website': 'https://calc/main.html',
-    'qweb': ['static/src/calc.xml'],
+    'qweb': ['static/src/xml/cal.xml'],
     'auto_install': False,
 }
 
