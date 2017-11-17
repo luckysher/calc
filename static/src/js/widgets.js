@@ -13,6 +13,9 @@ function openerp_calc_widgets(instance, module){
             this.getTextboxText = function (){
                 return this.$el.find('input-box').value
             }
+            this.setTextboxText = function (text){
+                return this.$el.find('input-box').value = text;
+            }
         },
 
         start: function() {
