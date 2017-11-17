@@ -1,0 +1,37 @@
+<templates id="template" xml:space="preserve">
+    <t t-name="NumpadWidget">
+        <center>
+            <div class="numpad">
+                <input type="text" class="input-box"/>
+                <br />
+                <button id="ac" class="number-char advance cal-font" >AC</button>
+                <button id="eq" class="number-char advance cal-font" >=</button>
+                <button id="back" class="number-char advance cal-font">
+                    <img src="/calc/static/src/img/backspace.png" width="84" height="16" />
+                </button>
+                <br />
+                <button id="1" class="number-char advance cal-font">1</button>
+                <button id="2" class="number-char advance cal-font">2</button>
+                <button id="3" class="number-char advance cal-font">3</button>
+                <br />
+                <button id="4" class="number-char advance cal-font">4</button>
+                <button id="5" class="number-char advance cal-font">5</button>
+                <button id="6" class="number-char advance cal-font">6</button>
+                <br />
+                <button id="7" class="number-char advance cal-font">7</button>
+                <button id="8" class="number-char advance cal-font">8</button>
+                <button id="9" class="number-char advance cal-font">9</button>
+                <br />
+                <button id="zr" class="number-char advance cal-font">0</button>
+                <button id="dot" class="number-char advance cal-font">.</button>
+                <button id="plus" class="number-char advance cal-font">+</button>
+                <br />
+                <button id="mins" class="number-char advance cal-font" >-</button>
+                <button id="mult" class="number-char advance cal-font">*</button>
+                <button id="div" class="number-char advance cal-font">/</button>
+                <br />
+            </div>
+        </center>
+    </t>
+</templates>
+
