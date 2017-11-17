@@ -10,11 +10,14 @@ function openerp_calc_widgets(instance, module){
             this.show_chars = function (){
 
             };
+            this.getTextboxText = function (){
+                return this.$el.find('input-box').value
+            }
         },
 
         start: function() {
             var self = this;
-            
+
             }
         });
     }
