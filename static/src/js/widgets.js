@@ -16,6 +16,11 @@ function openerp_calc_widgets(instance, module){
             this.setTextboxText = function (text){
                 return this.$el.find('input-box').value = text;
             }
+            this.delete_digit = function (){
+                var num = this.getTextboxText();
+                var edited_num = num.substr(0, num.length-1);
+               this.setTextboxText(edited_num);
+            }
         },
 
         start: function() {
