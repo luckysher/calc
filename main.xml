@@ -1,0 +1,32 @@
+<openerp>
+    <data>
+         <template id="home">
+             <html>
+                 <head>
+                     <title>CalC</title>
+                     <t t-call-assets="web.assets_common" t-css="false" />
+                     <t t-call-assets="web.assets_backend" t-css="false" />
+                    <link rel="stylesheet" type="text/css" href="/calc/static/src/css/calc.css" />
+                    <script type="text/javascript" id="loading-script">
+                         $(function() {
+                            var s = new openerp.init(<t t-raw='modules' />);
+                                <t t-raw='init' />
+                            });
+                    </script>
+                 </head>
+                 <body>
+                     <center>
+                         <h1>CalCulaTor</h1>
+                            <div class='openerp openerp_webclient_container'>
+                                <table >
+                                    <tr>
+                                        <td class="oe_application"/>
+                                    </tr>
+                                </table>
+                            </div>
+                     </center>
+                 </body>
+             </html>
+         </template>
+    </data>
+</openerp>
