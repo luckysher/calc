@@ -30,7 +30,11 @@ function openerp_calc_widgets(instance, module){
 
         start: function() {
             var self = this;
-
+            $('.numpad button').bind('click', function(){
+                var val = $(this).text();
+                console.log("numpad button --", val);
+                console.log("ID is : " +  $(this).id);
+                //self.delete_digit();
             });
            }
         });
