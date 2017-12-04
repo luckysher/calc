@@ -11,21 +11,27 @@ function openerp_calc_widgets(instance, module){
 
             };
             this.getTextboxText = function (){
-                return this.$el.find('input-box').value
-            }
+                return this.$el.find('.input-box').value
+            };
             this.setTextboxText = function (text){
-                return this.$el.find('input-box').value = text;
-            }
+                return this.$el.find('.input-box').value = text;
+            };
             this.delete_digit = function (){
                 var num = this.getTextboxText();
-                var edited_num = num.substr(0, num.length-1);
-               this.setTextboxText(edited_num);
-            }
+                if num.length > 0:
+                    var edited_num = num.subStr(0, num.length-1);
+                    this.setTextboxText(edited_num);
+               console.log("Deleting digit...");
+            };
+            this.show_propagation = function (bObj){
+                bObj.className -= "";
+            };
         },
 
         start: function() {
             var self = this;
 
-            }
+            });
+           }
         });
     }
