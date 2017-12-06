@@ -33,14 +33,14 @@ body{
     color: black;
     border: 3px solid gray;
     text-align-last: end;
-    border-bottom: 9px solid #74cc75;
+    border-bottom: 9px solid #6f6e6e4d;
 }
 .numpad{
     box-shadow: -1px 3px 6px 2px;
-    border: 6px solid #74cc75;
+    border: 6px solid #2d55b433;
 }
 .advance{
-    background: linear-gradient(#ededed, #bfbfbf, #451e0ab3);
+    background: linear-gradient(#cfbebe80, #bcbcbc, #ffffffb3);
 }
 .cal-font{
     font-size: 25px;
