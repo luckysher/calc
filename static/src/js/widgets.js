@@ -19,10 +19,9 @@ function openerp_calc_widgets(instance, module){
             this.delete_digit = function (){
                 var num = this.getTextboxText();
                 if (num.length > 0){
-                    var edited_num = num.subStr(0, num.length-1);
+                    var edited_num = num.substr(0, num.length-1);
                     this.setTextboxText(edited_num);
                     }
-               console.log("Deleting digit...");
             };
             this.show_propagation = function (bObj){
                 bObj.className -= "";
