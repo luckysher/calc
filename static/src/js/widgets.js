@@ -11,16 +11,17 @@ function openerp_calc_widgets(instance, module){
 
             };
             this.getTextboxText = function (){
-                return this.$el.find('.input-box').value
+                return this.$el.find('.input-box').val();
             };
             this.setTextboxText = function (text){
-                return this.$el.find('.input-box').value = text;
+                return this.$el.find('.input-box').val(text);
             };
             this.delete_digit = function (){
                 var num = this.getTextboxText();
-                if num.length > 0:
+                if (num.length > 0){
                     var edited_num = num.subStr(0, num.length-1);
                     this.setTextboxText(edited_num);
+                    }
                console.log("Deleting digit...");
             };
             this.show_propagation = function (bObj){
@@ -33,8 +34,19 @@ function openerp_calc_widgets(instance, module){
             $('.numpad button').bind('click', function(){
                 var val = $(this).text();
                 console.log("numpad button --", val);
-                console.log("ID is : " +  $(this).id);
-                //self.delete_digit();
+                if (this.id == "back"){
+                    self.delete_digit();
+                }
+                else {
+                      if (self.getTextboxText() != 'undefined'){
+                        val = self.getTextboxText() + val;
+                      }
+
+                      console.log("Text is: " + val);
+                      self.setTextboxText(val);
+                }
+
+
             });
            }
         });
