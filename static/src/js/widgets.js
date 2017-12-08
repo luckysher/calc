@@ -26,6 +26,11 @@ function openerp_calc_widgets(instance, module){
             this.show_propagation = function (bObj){
                 bObj.className -= "";
             };
+            this.solveEquation = function(equation){
+                var result;
+                
+                return result;
+            };
         },
 
         start: function() {
