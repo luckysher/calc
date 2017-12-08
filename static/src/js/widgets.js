@@ -34,22 +34,22 @@ function openerp_calc_widgets(instance, module){
                 var val = $(this).text();
                 if (this.id == "back"){
                     self.delete_digit();
+                    return;
                 }
                 if (this.id == "ac"){
                     self.setTextboxText("");
+                    return;
                 }
                 if (this.id == "eq"){
                     var equation = self.getTextboxText();
                     if (equation.indexOf(""))
-
                     self.setTextboxText("");
-                }
-                else {
-                      val = self.getTextboxText() + val;
-                      console.log("Text is: " + val);
-                      self.setTextboxText(val);
+                    return;
                 }
 
+                 val = self.getTextboxText() + val;
+                 console.log("Text is: " + val);
+                 self.setTextboxText(val);
 
             });
            }
