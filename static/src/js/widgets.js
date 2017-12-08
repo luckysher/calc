@@ -14,7 +14,7 @@ function openerp_calc_widgets(instance, module){
                 return this.$el.find('.input-box').val();
             };
             this.setTextboxText = function (text){
-                return this.$el.find('.input-box').val(text);
+                return this.$el.find('.input-box').val(text.trim());
             };
             this.delete_digit = function (){
                 var num = this.getTextboxText();
@@ -32,15 +32,20 @@ function openerp_calc_widgets(instance, module){
             var self = this;
             $('.numpad button').bind('click', function(){
                 var val = $(this).text();
-                console.log("numpad button --", val);
                 if (this.id == "back"){
                     self.delete_digit();
                 }
-                else {
-                      if (self.getTextboxText() != 'undefined'){
-                        val = self.getTextboxText() + val;
-                      }
+                if (this.id == "ac"){
+                    self.setTextboxText("");
+                }
+                if (this.id == "eq"){
+                    var equation = self.getTextboxText();
+                    if (equation.indexOf(""))
 
+                    self.setTextboxText("");
+                }
+                else {
+                      val = self.getTextboxText() + val;
                       console.log("Text is: " + val);
                       self.setTextboxText(val);
                 }
