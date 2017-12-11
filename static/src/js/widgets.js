@@ -63,7 +63,9 @@ function openerp_calc_widgets(instance, module){
                     //self.setTextboxText("");
                     return;
                 }
-              
+                if (this.id == "mins") {
+                    op_min = true;
+                }
                  val = self.getTextboxText() + val;
                  console.log("Text is: " + val);
 
