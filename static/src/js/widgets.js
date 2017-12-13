@@ -80,8 +80,19 @@ function openerp_calc_widgets(instance, module){
                 }
                 if (this.id == "eq"){
                     var equation = self.getTextboxText();
-                    console.log("var op_min = " + oprt);
-                    self.solveEquation("a+b");
+                    num2 = equation.substr(num1.toString().length+1, equation.length);
+                    console.log("num2 set : " + num2);
+                    if (num1 != null && num2 != null && num2.length > 0){
+                        num1 = self.strToNum(num1);
+                        num2 = self.strToNum(num2);
+                        result = self.solveEquation(num1, opt, num2);
+                        hasOpt = false;
+                        opt = null;
+                        num1 = self.strToNum(result);
+                        num2 = null;
+                        console.log(" setting total: : " +  result);
+                        self.setTextboxText(result.toString());
+                       }
                     return;
                 }
 
