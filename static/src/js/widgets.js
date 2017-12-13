@@ -29,11 +29,9 @@ function openerp_calc_widgets(instance, module){
             this.show_propagation = function (bObj){
                 bObj.className -= "";
             };
-            this.solveEquation = function(equation){
-                var result;
-                //$.each(oprts, function(){
-                //});
-                console.log("Solving equation..." + equation);
+            this.solveEquation = function(num1, opt, num2){
+                var result = null;
+       
                 return result;
             };
         },
@@ -42,8 +40,7 @@ function openerp_calc_widgets(instance, module){
             var self = this;
             var oprt = ['-', '+', '*', '/'];
             $('.numpad button').bind('click', function(){
-                var val = $(this).text();
-                var lastChar = null;
+                //var val = $(this).text();
                 var lastChar = $(this).text();
 
                 if (this.id == "back"){
@@ -52,6 +49,7 @@ function openerp_calc_widgets(instance, module){
                 }
                 if (this.id == "ac"){
                     self.setTextboxText("");
+
                     return;
                 }
                 if (this.id == "eq"){
@@ -72,20 +70,25 @@ function openerp_calc_widgets(instance, module){
                        }
 
                     var equation = self.getTextboxText();
-                    num2 = equation.substr(num1.length+1, equation.length);
+
+                    num2 = equation.substr(num1.toString().length+1, equation.length);
                     console.log("num2 set : " + num2);
-
-                   num1 = parseInt(num1);
-                    num2 = parseInt(num2);
-                    result =
-                    self.setTextboxText(result + '' + lastChar);
-                    hasOpt = true;
-                    opt = lastChar;
-                    console.log(" setting total: : " +  result);
-                    return;
+                    if (num1 != null && num2 != null && num2.length > 0){
+                        num1 = parseInt(num1);
+                        num2 = parseInt(num2);
+                        result = self.solveEquation(num1, opt, num2);
+                        self.setTextboxText(result + '' + lastChar);
+                        hasOpt = true;
+                        opt = lastChar;
+                        num1 = parseInt(result);
+                        num2 = null;
+                        console.log(" setting total: : " +  result);
+                        return;
+                        }
                 }
+                 //var lastCharInText = self.getTextboxText().charAt(self.getTextboxText().length-1);
 
-                 val = self.getTextboxText() + val;
+                 var val = self.getTextboxText() + lastChar;
                  console.log("Text is: " + val);
                  self.setTextboxText(val);
             });
