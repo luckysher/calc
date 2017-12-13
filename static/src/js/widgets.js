@@ -31,7 +31,19 @@ function openerp_calc_widgets(instance, module){
             };
             this.solveEquation = function(num1, opt, num2){
                 var result = null;
-       
+                if (opt == '/'){
+                    result = num1 / num2;
+                }
+                if (opt == '*'){
+                    result = num1 * num2;
+                }
+                if (opt == '+'){
+                    result = num1 + num2;
+                }
+                if (opt == '-'){
+                    result = num1 - num2;
+                }
+                console.log("solving equation : " + num1  + "" + opt + "" + num2 + " = " + result);
                 return result;
             };
         },
