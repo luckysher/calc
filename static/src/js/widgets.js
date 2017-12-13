@@ -61,7 +61,11 @@ function openerp_calc_widgets(instance, module){
                 }
                 if (this.id == "ac"){
                     self.setTextboxText("");
-
+                    num1 = null;
+                    num2 = null;
+                    hasOpt = false;
+                    oprt = null;
+                    result = null;
                     return;
                 }
                 if (this.id == "eq"){
@@ -99,7 +103,11 @@ function openerp_calc_widgets(instance, module){
                         }
                 }
                  //var lastCharInText = self.getTextboxText().charAt(self.getTextboxText().length-1);
-
+                 if (oprts.indexOf(lastChar) >= 0 && hasOpt ==  true){
+                        self.setTextboxText(self.getTextboxText().substr(0, self.getTextboxText().length-1)+lastChar);
+                        oprt = lastChar;
+                      return;
+                 }
                  var val = self.getTextboxText() + lastChar;
                  console.log("Text is: " + val);
                  self.setTextboxText(val);
