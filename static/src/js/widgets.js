@@ -75,6 +75,15 @@ function openerp_calc_widgets(instance, module){
                     num2 = equation.substr(num1.length+1, equation.length);
                     console.log("num2 set : " + num2);
 
+                   num1 = parseInt(num1);
+                    num2 = parseInt(num2);
+                    result =
+                    self.setTextboxText(result + '' + lastChar);
+                    hasOpt = true;
+                    opt = lastChar;
+                    console.log(" setting total: : " +  result);
+                    return;
+                }
 
                  val = self.getTextboxText() + val;
                  console.log("Text is: " + val);
