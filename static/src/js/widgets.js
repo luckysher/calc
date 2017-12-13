@@ -61,9 +61,7 @@ function openerp_calc_widgets(instance, module){
             var self = this;
             var oprt = ['-', '+', '*', '/'];
             $('.numpad button').bind('click', function(){
-                //var val = $(this).text();
                 var lastChar = $(this).text();
-
                 if (this.id == "back"){
                     self.delete_digit();
                     return;
@@ -103,7 +101,6 @@ function openerp_calc_widgets(instance, module){
                        }
 
                     var equation = self.getTextboxText();
-
                     num2 = equation.substr(num1.toString().length+1, equation.length);
                     if (num1 != null && num2 != null && num2.length > 0){
                         num1 = self.strToNum(num1);
