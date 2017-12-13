@@ -24,11 +24,11 @@
                 <br />
                 <button id="zr" class="number-char advance cal-font">0</button>
                 <button id="dot" class="number-char advance cal-font">.</button>
-                <button id="plus" class="number-char advance cal-font">+</button>
+                <button id="+" class="number-char advance cal-font">+</button>
                 <br />
-                <button id="mins" class="number-char advance cal-font" >-</button>
-                <button id="mult" class="number-char advance cal-font">*</button>
-                <button id="div" class="number-char advance cal-font">/</button>
+                <button id="-" class="number-char advance cal-font" >-</button>
+                <button id="*" class="number-char advance cal-font">*</button>
+                <button id="/" class="number-char advance cal-font">/</button>
                 <br />
             </div>
         </center>
