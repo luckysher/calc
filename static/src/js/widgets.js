@@ -13,6 +13,16 @@ function openerp_calc_widgets(instance, module){
             this._super(parent, options);
             this.calc_widget = this; //So that calc_widget's childs have child_widget set automatically
 
+            this.strToNum = function(num){
+                var ret = null;
+                if (num.toString().indexOf('.') >= 0){
+                    ret = parseFloat(num);
+                }else{
+                    ret = parseInt(num);
+                }
+                return ret;
+            };
+
             this.getTextboxText = function (){
                 return this.$el.find('.input-box').val();
             };
