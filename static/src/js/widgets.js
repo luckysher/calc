@@ -12,6 +12,8 @@ function openerp_calc_widgets(instance, module){
         init: function(parent, options) {
             this._super(parent, options);
             this.calc_widget = this; //So that calc_widget's childs have child_widget set automatically
+            $('.oe_loading').remove();
+
 
             this.strToNum = function(num){
                 var ret = null;
