@@ -100,13 +100,13 @@ function openerp_calc_widgets(instance, module){
                     num2 = equation.substr(num1.toString().length+1, equation.length);
                     console.log("num2 set : " + num2);
                     if (num1 != null && num2 != null && num2.length > 0){
-                        num1 = parseInt(num1);
-                        num2 = parseInt(num2);
+                        num1 = self.strToNum(num1);
+                        num2 = self.strToNum(num2);
                         result = self.solveEquation(num1, opt, num2);
                         self.setTextboxText(result + '' + lastChar);
                         hasOpt = true;
                         opt = lastChar;
-                        num1 = parseInt(result);
+                        num1 = self.strToNum(result);
                         num2 = null;
                         console.log(" setting total: : " +  result);
                         return;
