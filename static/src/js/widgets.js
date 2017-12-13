@@ -53,7 +53,6 @@ function openerp_calc_widgets(instance, module){
                 if (opt == '-'){
                     result = num1 - num2;
                 }
-                console.log("solving equation : " + num1  + "" + opt + "" + num2 + " = " + result);
                 return result;
             };
         },
@@ -81,7 +80,6 @@ function openerp_calc_widgets(instance, module){
                 if (this.id == "eq"){
                     var equation = self.getTextboxText();
                     num2 = equation.substr(num1.toString().length+1, equation.length);
-                    console.log("num2 set : " + num2);
                     if (num1 != null && num2 != null && num2.length > 0){
                         num1 = self.strToNum(num1);
                         num2 = self.strToNum(num2);
@@ -90,7 +88,6 @@ function openerp_calc_widgets(instance, module){
                         opt = null;
                         num1 = self.strToNum(result);
                         num2 = null;
-                        console.log(" setting total: : " +  result);
                         self.setTextboxText(result.toString());
                        }
                     return;
@@ -102,14 +99,12 @@ function openerp_calc_widgets(instance, module){
                           hasOpt = true;
                           opt = lastChar;
                           self.setTextboxText(num1 + opt);
-                          console.log("num1 : " + num1);
                           return;
                        }
 
                     var equation = self.getTextboxText();
 
                     num2 = equation.substr(num1.toString().length+1, equation.length);
-                    console.log("num2 set : " + num2);
                     if (num1 != null && num2 != null && num2.length > 0){
                         num1 = self.strToNum(num1);
                         num2 = self.strToNum(num2);
@@ -119,18 +114,16 @@ function openerp_calc_widgets(instance, module){
                         opt = lastChar;
                         num1 = self.strToNum(result);
                         num2 = null;
-                        console.log(" setting total: : " +  result);
                         return;
                         }
                 }
-                 //var lastCharInText = self.getTextboxText().charAt(self.getTextboxText().length-1);
+
                  if (oprts.indexOf(lastChar) >= 0 && hasOpt ==  true){
                         self.setTextboxText(self.getTextboxText().substr(0, self.getTextboxText().length-1)+lastChar);
                         oprt = lastChar;
                       return;
                  }
                  var val = self.getTextboxText() + lastChar;
-                 console.log("Text is: " + val);
                  self.setTextboxText(val);
             });
            }
