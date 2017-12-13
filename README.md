@@ -1,5 +1,5 @@
 # calc
-Calc is a simple odoo app for doing calculations writen in odoo(Python). 
+Calc is a simple odoo app for doing calculations written in odoo(Python).
 
 Description:
 ------------
